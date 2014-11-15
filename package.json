@@ -1,0 +1,12 @@
+{
+    "name": "brackets-doxygen",
+    "title": "Doxygen",
+    "description": "This extension offers to programmers an easy way to include doxygen comments in their codes.",
+    "homepage": "No page", // URL for your project
+    "version": "1.0.0",
+    "author": "Antonio Vélez",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.20.0"
+    }
+}
