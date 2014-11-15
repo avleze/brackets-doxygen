@@ -1,4 +1,6 @@
-#BRACKETS-DOXYGEN EXTENSION
+#Brackets Extension Template
+
+This is a sample README file for a Brackets extensions.
 
 ##Install from URL
 
@@ -14,25 +16,3 @@
 
 ##Instructions
 
-You can add comments like:
-      /**
-       * @brief A brief description.
-       * @param [in|out] type parameter_name Description of parameter.
-       * @param [in|out] type parameter_name Description of parameter.
-       * @return Description of returned value.
-       */
-By pressing the keyboard shorcut Alt+D.
-
-You can add comments like:
-      //*< Brief description.
-By pressing the keyboard shorcut Alt+V.
-
-You can add comments like:
-      /*
-       *
-       */
-By pressing the keyboard shorcut Alt+M.
-
-You can add comments like:
-      //
-By pressing the keyboard shorcut Alt+S.

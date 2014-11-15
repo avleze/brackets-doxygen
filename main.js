@@ -7,6 +7,7 @@ define(function(require, exports, module) {
     var KeyBindingManager = brackets.getModule("command/KeyBindingManager");
     var DocumentManager   = brackets.getModule("document/DocumentManager");
     var EditorManager     = brackets.getModule("editor/EditorManager");
+    
     var MENU_NAME      = "Doxygen";
     var MENU_ID        = "doxygen-menu";
     var FDOXY_ID       = "fdoxy";
@@ -40,6 +41,12 @@ define(function(require, exports, module) {
     KeyBindingManager.addBinding(SLDOXY_ID, "Alt-S", 0);
     KeyBindingManager.addBinding(SMDOXY_ID, "Alt-M", 0);
     
+    /**
+     * @brief Some brief description.
+     * @param [in] string str String to repeat.
+     * @param [in] number i Times to repeat the string.
+     * @return The repeated string.
+     */
     function strRepeat (str, i){
         var newStr = "";
         while(i != 0){
@@ -117,9 +124,10 @@ define(function(require, exports, module) {
         
         // Editor objects let us modify selections
         var editor = EditorManager.getCurrentFullEditor();
-        if(editor.getSelectedText() == "")
-        {
-            var pos = editor.getCursorPos();
+        
+        var pos = editor.getCursorPos();
+
+        if(editor.getSelectedText() == ""){    
             var line = currentDoc.getLine(pos.line);
             var spaces = 0;
         
@@ -133,7 +141,32 @@ define(function(require, exports, module) {
             pos.ch += spaces;
             
             // Add our document string to the document.
-            currentDoc.replaceRange(documentation, pos);}
+            currentDoc.replaceRange(documentation, pos);
+        }
+        else{
+            // String to be documented.
+            var strDoc = editor.getSelectedText(true);
+            
+            var docStr = "//";
+            var spaces = 0;
+            
+            for(var i = 0; i != strDoc.length; ++i)
+            {
+                if(strDoc.charAt(i) == '\n')
+                {
+                    docStr += strDoc.charAt(i);
+                    docStr += "//";
+                    spaces = 0;
+                }
+                else if( strDoc.charAt(i) != ' ' || spaces ==  2)
+                    docStr += strDoc.charAt(i);
+                else
+                    ++spaces;                   
+            }
+            var selection =  editor.getSelection();
+            currentDoc.replaceRange(docStr, selection.start, selection.end);
+
+        }
     }
     /**
      * @brief This function writes a simple multiline comment.
@@ -167,18 +200,11 @@ define(function(require, exports, module) {
             documentation += spToAdd + " *\r";
         }
         documentation += spToAdd + " */";
-        // Add our document string to the document.
+        // Add our document string to the document.// 
         currentDoc.replaceRange(documentation, pos);
     }
     
 });
-    
-
-
-
-
-
-
 
 
 
