@@ -1,12 +1,8 @@
-#Brackets Extension Template
-
-This is a sample README file for a Brackets extensions.
-
+#Brackets-Doxygen Extension
 ##Install from URL
 
 1. Open the the Extension Manager from the File menu
 2. Copy paste the URL of the github repo or zip file
-
 
 ##Install from file system
 
