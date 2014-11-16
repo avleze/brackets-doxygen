@@ -20,3 +20,7 @@ By pressing this hot keys you get:
     * Alt + V , a simple comment to document a variable.
     
 Note: If you have selected a text, and press Alt + S hot key, Doxygen Extension will comment all the lines with //.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/avleze/brackets-doxygen/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
