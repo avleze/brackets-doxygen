@@ -2,7 +2,7 @@
     "name": "brackets-doxygen",
     "title": "Doxygen",
     "description": "This extension offers to programmers an easy way to include doxygen comments in their codes.",
-    "homepage": "https://github.com/dbratcher/brackets-extract", 
+    "homepage": "https://github.com/avleze/brackets-doxygen", 
     "version": "1.0.0",
     "author": "Antonio Vélez",
     "license": "MIT",
