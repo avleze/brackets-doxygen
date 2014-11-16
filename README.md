@@ -16,3 +16,11 @@ This is a sample README file for a Brackets extensions.
 
 ##Instructions
 
+By pressing this hot keys you get:
+    
+    * Alt + D , a doxygen type comment.
+    * Alt + S , a simple line comment.
+    * Alt + M , a simple multiline comment.
+    * Alt + V , a simple comment to document a variable.
+    
+Note: If you has selected a text, and press Alt + S hot key, Doxygen Extension will comment all the lines with //.
