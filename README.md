@@ -19,4 +19,4 @@ By pressing this hot keys you get:
     * Alt + M , a simple multiline comment.
     * Alt + V , a simple comment to document a variable.
     
-Note: If you have selected a text, and press Alt + S hot key, Doxygen Extension will comment all the lines with //.
+Note: If you a text selected, and press Alt + S hot key, Doxygen Extension will comment all the lines with //.
