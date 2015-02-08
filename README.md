@@ -1,12 +1,8 @@
-#Brackets Extension Template
-
-This is a sample README file for a Brackets extensions.
-
+#Brackets-Doxygen Extension
 ##Install from URL
 
 1. Open the the Extension Manager from the File menu
 2. Copy paste the URL of the github repo or zip file
-
 
 ##Install from file system
 
@@ -24,3 +20,6 @@ By pressing this hot keys you get:
     * Alt + V , a simple comment to document a variable.
     
 Note: If you have selected a text, and press Alt + S hot key, Doxygen Extension will comment all the lines with //.
+
+Thanks to:
+    * Eric J https://github.com/wormeyman for find the first error of this plugin.

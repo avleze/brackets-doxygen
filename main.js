@@ -1,22 +1,22 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var CommandManager    = brackets.getModule("command/CommandManager");
+     var CommandManager    = brackets.getModule("command/CommandManager");
     var Menus             = brackets.getModule("command/Menus");
     var Commands          = brackets.getModule("command/Commands");
     var KeyBindingManager = brackets.getModule("command/KeyBindingManager");
     var DocumentManager   = brackets.getModule("document/DocumentManager");
-    var EditorManager     = brackets.getModule("editor/EditorManager");
+    var EditorManager     = brackets.getModule("editor/EditorManager");  
     
     var MENU_NAME      = "Doxygen";
-    var MENU_ID        = "doxygen-menu";
-    var FDOXY_ID       = "fdoxy";
+    var MENU_ID        = "doxygen.menu";
+    var FDOXY_ID       = "doxygen.fdoxy";
     var FDOXY_COMMENT  = "/** Comment...";
-    var VDOXY_ID       = "vdoxy";
+    var VDOXY_ID       = "doxygen.vdoxy";
     var VDOXY_COMMENT  = "//*< A brief description.";
-    var SLDOXY_ID      = "sldoxy";
+    var SLDOXY_ID      = "doxygen.sldoxy";
     var SLDOXY_COMMENT = "// A brief description.";
-    var SMDOXY_ID      = "smdoxy";
+    var SMDOXY_ID      = "doxygen.smdoxy";
     var SMDOXY_COMMENT = "/* Comment";
 
     CommandManager.register(FDOXY_COMMENT, FDOXY_ID, functionDocumentation);
@@ -25,15 +25,12 @@ define(function(require, exports, module) {
     CommandManager.register(SMDOXY_COMMENT, SMDOXY_ID, simpleMultiLineDocumentation);
 
     // Menu Creation.
-    var menu = Menus.addMenu(MENU_NAME, MENU_ID, Menus.AFTER, 0);
-    menu.addMenuItem(FDOXY_COMMENT, [], Menus.AFTER, MENU_ID);
-    menu.addMenuItem(FDOXY_ID);
-    menu.addMenuItem(VDOXY_COMMENT, [], Menus.AFTER, MENU_ID);
-    menu.addMenuItem(VDOXY_ID);
-    menu.addMenuItem(SLDOXY_COMMENT, [], Menus.AFTER, MENU_ID);
-    menu.addMenuItem(SLDOXY_ID);
-    menu.addMenuItem(SMDOXY_COMMENT, [], Menus.AFTER, MENU_ID);
-    menu.addMenuItem(SMDOXY_ID);
+    Menus.addMenu(MENU_NAME, MENU_ID, Menus.AFTER, 0);
+    var menu = Menus.getMenu(MENU_ID);
+    menu.addMenuItem(FDOXY_ID, [], 0, MENU_ID);
+    menu.addMenuItem(VDOXY_ID, [], 0, MENU_ID);
+    menu.addMenuItem(SLDOXY_ID, [], 0, MENU_ID);
+    menu.addMenuItem(SMDOXY_ID, [], 0, MENU_ID);
     menu.addMenuDivider();
     
     KeyBindingManager.addBinding(FDOXY_ID, "Alt-D", 0);
@@ -41,7 +38,7 @@ define(function(require, exports, module) {
     KeyBindingManager.addBinding(SLDOXY_ID, "Alt-S", 0);
     KeyBindingManager.addBinding(SMDOXY_ID, "Alt-M", 0);
     
-    /**
+        /**
      * @brief Some brief description.
      * @param [in] string str String to repeat.
      * @param [in] number i Times to repeat the string.
@@ -203,7 +200,6 @@ define(function(require, exports, module) {
         // Add our document string to the document.// 
         currentDoc.replaceRange(documentation, pos);
     }
-    
 });
 
 
