@@ -3,11 +3,7 @@
     "title": "Doxygen",
     "description": "This extension offers to programmers an easy way to include doxygen comments in their codes.",
     "homepage": "https://github.com/avleze/brackets-doxygen", 
-<<<<<<< HEAD
     "version": "2.0.0",
-=======
-    "version": "1.0.0",
->>>>>>> origin/master
     "author": "Antonio Vélez",
     "license": "MIT",
     "engines": {
