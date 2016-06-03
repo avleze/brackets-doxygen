@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     'use strict';
 
-     var CommandManager    = brackets.getModule("command/CommandManager");
+    var CommandManager    = brackets.getModule("command/CommandManager");
     var Menus             = brackets.getModule("command/Menus");
     var Commands          = brackets.getModule("command/Commands");
     var KeyBindingManager = brackets.getModule("command/KeyBindingManager");
